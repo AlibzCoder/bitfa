@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bitfa</title>
+  </head>
+  <body>
+    <div id="app">
+
+      <h1 class="title">Bitfa Agency</h1>
+      <div class="pages">
+        <div class="page table" id="wallets_table"></div>
+
+        <div class="page wallet-chart" id="wallet_chart">
+          <div class="graph-box">
+            <div class="graph" id="graph"></div>
+            <div class="graph-back" id="graph_back"><img src="/arrow-right.svg" /></div>
+            <div class="graph-loader d-flex flex-center" id="graph_loader" style="display: none;">
+              <div class="loader"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

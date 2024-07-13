@@ -1,0 +1,298 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+html, body{
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  color: #FFF;
+  background-color: #222222;
+  text-align: left;
+}
+
+.c-primary{
+  color: #ff9800;
+}
+.t-center{
+  text-align: center;
+}
+.d-flex{
+  display: flex !important;
+}
+.d-block{
+  display: block;
+}
+.d-none{
+  display: none;
+}
+.flex-center{
+  align-items: center;
+  justify-content: center;
+}
+.flex-column{
+  flex-direction: column;
+}
+.flex-between{
+  justify-content: space-between !important;
+}
+
+
+.title{
+  width: 50vw;
+  text-indent: 2.5rem;
+  margin: 0.5rem auto;
+  padding: 1rem 0;
+}
+.title::after{
+  content: " ";
+  display: block;
+  width: 1%;
+  height: 1.5px;
+  margin: 0.75rem 0 0 0;
+  background-color: #ff9800;
+  animation: lineStrech forwards 0.45s;
+}
+@keyframes lineStrech {
+  0% {
+    width: 1%;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+.pages {
+  width: 50vw;
+  margin: 0 auto;
+}
+
+
+
+.table {
+  table{
+    table-layout: fixed;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    background: rgb(255,255,255,0.03);
+    border-radius: 0.35rem;
+    min-height: 350px;
+    tr{
+      th, td {
+        padding: 0.5em;
+        &:not(:first-child){
+          border-left: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        &.td-action{
+          width: 10%;
+          padding: 0.25em;
+        }
+        &.td-fold{
+          *{
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 100%;
+            display: block;
+          }
+        }
+      }
+      &:not(:last-child):not(.wallets-table-temp-tr){
+        th, td {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        th{
+          border-bottom-color: hsla(36, 100%, 50%, 0.5);
+        }
+      }
+      
+      &:first-child th{
+        height: 12.5%;
+      }
+      &:nth-child(even){
+        background: rgb(255,255,255,0.03);
+      }
+    }
+    .wallets-table-temp-tr{
+      position: relative;
+      .no-data-loader{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.75;
+        img{
+          width: 50px;
+          margin: 0.5rem;
+          color: #FFF;
+        }
+      }
+    }
+  }
+
+  .table-paginations{
+    display: flex;
+    justify-content: flex-end;
+    .pagination-btn {
+      width: 2.25rem;
+      height: 2.25rem;
+      padding: 0 0.75rem;
+      margin: 1rem 0.5rem;
+      &.active{
+        color: #ff9800;
+      }
+      &.pagination-prev{
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color .25s;
+  &.btn-round-outline{
+    border: 1px solid currentColor;
+    border-radius: 10px;
+  }
+  &:hover:not(.disabled){
+    color: #ff9800;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  &.disabled{
+    opacity: 0.6;
+  }
+  
+}
+
+
+.loader {
+  width: 45px;
+  aspect-ratio: 1;
+  --c:no-repeat linear-gradient(#ff9800 0 0);
+  background: var(--c), var(--c), var(--c);
+  animation: 
+    l16-1 1s infinite,
+    l16-2 1s infinite;
+}
+@keyframes l16-1 {
+ 0%,100% {background-size:20% 100%}
+ 33%,66% {background-size:20% 40%}
+}
+@keyframes l16-2 {
+ 0%,33%   {background-position: 0 0   ,50% 100%,100% 0}
+ 66%,100% {background-position: 0 100%,50% 0   ,100% 100%}
+}
+
+
+
+
+
+
+
+
+
+
+
+.wallet-chart{
+  width: 100%;
+  position: relative;
+  padding-bottom: 55%;
+
+  .graph-box{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    .graph-y-left-axix-box,
+    .graph-y-right-axix-box,
+    .graph{
+      width: 100%;
+      height: 100%;
+    }
+    canvas{
+      width: 100%;
+    }
+    .graph-back{
+      width: 2.5rem;
+      height: 2.5rem;
+      transform: rotate(180deg);
+      cursor: pointer;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .graph-loader{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+  .title, .pages {
+    width: 70vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title, .pages {
+    width: 85vw;
+  }
+}
+@media screen and (max-width: 537px) {
+  .table{
+    .table-paginations{
+      .pagination-btn{
+        width: 7.5vw;
+        height: 7.5vw;
+        padding: 0 2.5vw;
+        font-size: 2.25vw;
+      }
+    }
+  }
+}
